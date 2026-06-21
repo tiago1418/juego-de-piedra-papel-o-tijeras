@@ -26,3 +26,37 @@ while True:
 
     print("Tú elegiste:", jugador)
     print("La computadora eligió:", computadora)
+
+    # Determinar el ganador
+    if jugador == computadora:
+        print("¡Empate!")
+        empates += 1
+
+    elif (jugador == "piedra" and computadora == "tijeras") or \
+         (jugador == "papel" and computadora == "piedra") or \
+         (jugador == "tijeras" and computadora == "papel"):
+
+        print("¡Ganaste!")
+        victorias += 1
+
+    else:
+        print("¡La computadora gana!")
+        derrotas += 1
+
+    # Mostrar marcador
+    print("\n--- MARCADOR ---")
+    print("Victorias:", victorias)
+    print("Derrotas:", derrotas)
+    print("Empates:", empates)
+
+    # Preguntar si desea continuar
+    respuesta = input("\n¿Deseas jugar otra vez? (s/n): ").lower()
+
+    if respuesta != "s":
+        break
+
+print("\nGracias por jugar.")
+print("Resultado final:")
+print("Victorias:", victorias)
+print("Derrotas:", derrotas)
+print("Empates:", empates)
